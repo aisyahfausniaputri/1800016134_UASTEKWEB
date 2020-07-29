@@ -1,0 +1,22 @@
+<h3 mat-dialog-title>Tambahkan Pesanan</h3>
+<div mat-dialog-content>
+  <mat-form-field style="width: 100%;">
+    <mat-label>Orderhijab</mat-label>
+    <input matInput [(ngModel)]="data.orderhijab">
+  </mat-form-field>
+
+  <mat-form-field style="width: 100%;">
+    <mat-label>Warna</mat-label>
+    <input matInput [(ngModel)]="data.warna">
+  </mat-form-field>
+
+  <mat-form-field style="width: 100%;">
+    <mat-label>Alamat</mat-label>
+    <input matInput [(ngModel)]="data.alamat">
+  </mat-form-field>
+</div>
+<mat-dialog-actions>
+  <span class="spacer"></span>
+  <button mat-button mat-dialog-close>Batal</button>
+  <button mat-raised-button color="primary" [mat-dialog-close]="true" (click)="simpan(data)">Simpan</button>
+</mat-dialog-actions>

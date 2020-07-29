@@ -1,0 +1,33 @@
+<mat-toolbar color="dark">
+  <span>GALERI HIJAB</span>
+  <span class="spacer"></span>
+  <button mat-raised-button color="warn" class="logout" routerLink="/login">Logout</button>
+</mat-toolbar>
+<div style=" padding:px">
+  <div class="container">
+    <button class="btn-tambah" mat-raised-button color="light" (click)="buat()">Tambah Pesanan</button>
+    <mat-card style="width: 100%;">
+      <mat-card-header>
+        <mat-card-title>Daftar Pesanan</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <img src="assets/hijab1.jpg" width="945px" height="210px">
+        <mat-list>
+          <mat-list-item *ngFor="let item of dataHijab" class="posisi1">
+            <span matListAvatar class="posisi">
+              <img style="height: 50px;" src="/assets/hijab2.jpg" alt="">
+            </span>
+            <h3 matLine><b>{{item.orderhijab}}</b></h3>
+            <p matLine>
+              <span> Warna : {{item.warna}} </span>
+            </p>
+            <p matLine>
+              <span> Alamat : {{item.alamat}}</span>
+            </p>
+            <button class="btn-edit" mat-stroked-button color="dark" (click)="edit(item)">Edit</button>
+            <button class="btn-delete" mat-stroked-button color="light" (click)="hapus(item.id)">Hapus</button>
+          </mat-list-item>
+        </mat-list>
+      </mat-card-content>
+    </mat-card>
+  </div>
